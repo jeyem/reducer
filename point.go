@@ -40,7 +40,11 @@ func New(data interface{}) ([]Point, error) {
 }
 
 // Reduce points
-func Reduce(points []Point, minKeep, chunkSize int, algorithm string) []Point {
+func Reduce(data interface{}, minKeep, chunkSize int, algorithm string) []Point {
+	points, err := New(data)
+	if err != nil {
+		return nil
+	}
 	if len(points) <= chunkSize*2 || len(points) < minLengthForChunking {
 
 		if algorithm == VisvalingamAlg {
