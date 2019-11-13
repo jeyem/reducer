@@ -1,4 +1,4 @@
-package reducers
+package reducer
 
 import (
 	"errors"
