@@ -42,5 +42,8 @@ func TestVisvalingam(t *testing.T) {
 		return
 	}
 	pts := Reduce(points, 5, 3, VisvalingamAlg)
-	fmt.Println(pts)
+	for _, p := range pts {
+		fmt.Println(p.(testPoint))
+	}
+
 }
